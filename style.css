@@ -1,0 +1,125 @@
+body{
+    background-image: url("HD-wallpaper-anime-bed-background-hotsell-58-off-aesthetic-anime-room.jpg");
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#girl{
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    transform: translateX(-50%) scale(0.8);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#clickText{
+    font-family: 'Roboto Mono', cursive;
+    font-size: 32px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    background: linear-gradient(rgb(255, 255, 255), rgb(250, 176, 250));
+    border-radius: 10px;
+}
+#changecharacter{
+    font-family: 'Roboto Mono', cursive;
+    font-size: 32px;
+    position: absolute;
+    top: 1px;
+    color: blueviolet;
+}
+#changedtext{
+    display: none;  /* Initially hidden */
+    opacity: 0;
+    transition: opacity 1s; /* Smooth fade-in and fade-out */
+    color: rgb(0, 89, 255);
+    background-color: azure;
+    border-radius: 10px;
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
+    font-family: 'Roboto Mono', cursive;
+}
+#coin{
+    position: absolute;
+    width: 50px;
+    height: auto;
+    top: 5px;
+    left: 5px;
+}
+#amountofcoins{
+    size: 30px;
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    color: rgb(248, 224, 86);
+    font-family: 'Roboto Mono', cursive;
+}
+#store{
+    font-family: 'Roboto Mono', cursive;
+    font-size: 32px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    background: linear-gradient(rgb(255, 255, 255), rgb(250, 176, 250));
+    border-radius: 10px;
+}
+#showpopup{
+    font-family: 'Roboto Mono', cursive;
+    border-radius: 10px;
+    display: none;
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    width: 500px;
+    height: 600px;
+    background-color: rgb(240, 247, 255);
+    border: 2px solid black;
+    padding-left: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow-y: auto;
+}
+#warning{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-family: 'Roboto Mono', cursive;
+    color: rgb(245, 171, 245);
+    background-color: rgb(141, 24, 250);
+    border-radius: 10px;
+}
+#nomusic{
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    font-family: 'Roboto Mono', cursive;
+    color: rgb(243, 82, 243);
+    background: linear-gradient(rgb(255, 255, 255), rgb(250, 176, 250));
+    border-radius: 10px;
+    z-index: 1000;
+}
+#tools{
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace;
+    border-bottom: 10px solid black; width: 170px;
+}
+#background{
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace;
+    border-bottom: 10px solid black; width: 350px;
+    padding-top: 50px;
+}
+#doubleclick{
+    padding-left: 50px;
+    color: rgb(56, 211, 250);
+    text-shadow: 10px; color: solid black;
+}
