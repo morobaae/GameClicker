@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GirlsClicker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="https://yandex.ru/games/sdk/v2"></script>
+</head>
+<body>
+    <audio id="bg-music" src="good-night-lofi-cozy-chill-music-160166.mp3" autoplay loop></audio>
+    <img src="anime_girl_PNG71.png" id="girl" onclick="amount_of_clicks()">
+    <img src="image.png" id="coin">
+    <h1 id="nomusic" onclick="mute_music()" style="cursor: pointer; scale: 1.1;"; >Mute music</h1>
+    <h1 id="store" onclick="open_store_function()" style="cursor: pointer; scale: 1.1;">STORE</h1>
+    <h1><span id="amountofcoins"></span></h1>
+    <h1 id="warning">Every level you get 1 coin!</h1>
+    <h1 id="clickText">clicks:0</h1>
+    <h1 id="changecharacter">You need <span id="clicksneeded"></span> clicks to change your character!</h1>
+    <h1 id="changedtext" style="display: none; color: rgb(0, 195, 255); position: absolute; right: 150px;">Your character has changed!</h1>
+    <div id="showpopup"><h1 id="tools">Tools</h1>
+        <h1 id="doubleclick" onclick="doubleclickON()" style="cursor: pointer; scale: 1.1;">Double click:   3 coins</h1>
+        <h1 id="background">Backgrounds</h1>
+        <img id="pic1" src="Aesthetic-Wallpaper-Anime-Wallpaper.jpg" width="300px" height="auto" onclick="pic11()" style="cursor: pointer; scale: 1.1;"><h1>1 coin</h1>
+        <img id="pic2" src="Aesthetic-Anime-Wallpaper-HD.jpg" width="300px" height="auto" onclick="pic22()" style="cursor: pointer; scale: 1.1;"><h1>1 coin</h1>
+        <img id="pic3" src="beautiful-city-landscape-background-cartoon-summer-sunset-with-clouds-and-lake-anime-style-photo.jpg" width="300px" height="auto" onclick="pic33()" style="cursor: pointer; scale: 1.1;"><h1>1 coin</h1>
+    </div>
+    <script>
+        window.addEventListener('click', function () {
+        music.volume = 0.5;
+        const music = document.getElementById('bg-music');
+        music.play();
+        }, { once: true }); // Runs only once
+        clicks1=100
+        clicks=0
+        x=1
+        num_coins=3
+        document.getElementById("amountofcoins").innerText = num_coins;
+        updatetext()
+        function pic11(){
+            if(num_coins>=1|| pic1==true){
+                document.body.style.backgroundImage = "url('Aesthetic-Wallpaper-Anime-Wallpaper.jpg')";
+                num_coins-=1;
+                pic1=true;
+            }
+        }
+        function pic22(){
+            if(num_coins>=1|| pic2==true){
+                document.body.style.backgroundImage = "url('Aesthetic-Anime-Wallpaper-HD.jpg')";
+                num_coins-=1;
+                pic2=true;
+            }
+        }
+        function pic33(){
+            if(num_coins>=1 || pic3==true){
+                document.body.style.backgroundImage = "url('beautiful-city-landscape-background-cartoon-summer-sunset-with-clouds-and-lake-anime-style-photo.jpg')";
+                num_coins-=1;
+                pic3=true;
+            }
+        }
+        function mute_music(){
+            music.volume = 0;
+            document.getElementById("nomusic").innerText="Unmute music"
+            x+=1
+            if(x%2==0){
+                music.volume = 0.5;
+                document.getElementById("nomusic").innerText="Mute music"
+            }
+        }
+        function open_store_function(){
+            const popup = document.getElementById('showpopup');
+            showpopup.style.display = (showpopup.style.display === 'block') ? 'none' : 'block';
+        }
+        function doubleclickON(){
+            if(num_coins>=3){
+                doubleclick=true
+                num_coins-=3
+            }
+        }
+        function amount_of_clicks(){
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+            document.getElementById("clickText").innerText = "Clicks: " + clicks;
+            document.getElementById("amountofcoins").innerText = num_coins;
+            if(clicks==100){
+                num_coins+=1;
+                document.getElementById("girl").src="Anime-Girl-Aesthetics-Transparent-PNG.png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+            }, 3500);
+                clicks1*=2;
+                updatetext();
+            }
+            else if(clicks==200){
+                num_coins+=1;
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+                document.getElementById("girl").src="pngegg.png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                document.getElementById("girl").style.marginTop = "-50px";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+                }, 3500)
+            clicks1*=2;
+            updatetext();
+            }
+            else if(clicks==400){
+                num_coins+=1;
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+                document.getElementById("girl").src="pngwing.com.png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                document.getElementById("girl").style.marginTop = "100px";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+                }, 3500)
+            clicks1*=2;
+            updatetext();
+            }
+            else if(clicks==800){
+                num_coins+=1;
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+                document.getElementById("girl").src="16-166023_anime-girl-transparent-background-hd-png-download (1).png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                document.getElementById("girl").style.marginTop = "100px";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+                }, 3500)
+            clicks1*=2;
+            updatetext();
+            }
+            else if(clicks==1600){
+                num_coins+=1;
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+                document.getElementById("girl").src="Sad-Anime-Girl-PNG-HD-Quality.png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                document.getElementById("girl").style.marginTop = "100px";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+                }, 3500)
+            clicks1*=2;
+            updatetext();
+            }
+            else if(clicks==3200){
+                num_coins+=1;
+            if(doubleclick==true)
+                clicks+=2
+            else
+                clicks+=1
+                document.getElementById("girl").src="png-transparent-anime-vocaloid-manga-anime-girl-purple-cg-artwork-black-hair-thumbnail (1).png"
+                document.getElementById("girl").style.transform = "scale(0.8)";
+                document.getElementById("girl").style.marginTop = "100px";
+                const changedText = document.getElementById("changedtext");
+                changedText.style.display = 'block';
+                setTimeout(() => {
+                    changedText.style.opacity = 1;  // Fade in by setting opacity to 1
+                }, 10);
+                setTimeout(() => {
+                    changedText.style.opacity = 0;  // Fade out by setting opacity to 0
+                }, 3000);
+                setTimeout(function(){
+                document.getElementById("changedtext").style.display = 'none';
+                }, 3500)
+                document.getElementById("changedtext").innerText = "1000000000 left clicks to win!)";
+            }
+        }
+        function updatetext(){
+            document.getElementById("clicksneeded").innerText = clicks1;
+        }
+        const music = document.getElementById('bg-music');
+        window.addEventListener('click', () => {
+        music.volume = 0.5;
+        music.play();
+    }, { once: true })
+    </script>
+</body>
+</html>
